@@ -5,9 +5,9 @@
 
   var KIS = (window.KIS = window.KIS || {});
 
-  // ICP floor in USD/month collected. kisos.com says $20K+; still to be confirmed.
+  // ICP floor in USD/month collected ($30K+, set 2026-10-30).
   // Change this one number to move the qualify / not-yet line on both funnels.
-  KIS.ICP_FLOOR = 20000;
+  KIS.ICP_FLOOR = 30000;
 
   var TRACK_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "fbclid", "gclid"];
   var STORE = "kis_funnel";
