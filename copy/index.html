@@ -112,16 +112,16 @@ If this sounds like your business, the next step is a demo call with our team.</
 You built the demand. Let us build the operating system around it.</p>
 <p>Click the button below this video and pick a time. And bring the question we started with: if ten new clients paid you next Monday, who would onboard them?</p>
 <p>Let's make the answer "the system."</p></div></section>
-  <section class="section doc" id="emails"><div class="wrap"><p class="eyebrow">Emails and SMS</p><h2>Sequence A: watched-the-video nurture (opted in on the VSL page, no booking yet)</h2>
-<p>Trigger: VSL opt-in form submitted. Exit: demo booked (move to Sequence B).</p>
-<h3>A1. Immediately</h3>
-<p><strong>Subject:</strong> The video you asked for
-<strong>Preview:</strong> Plus the one question to answer before you watch</p>
+  <section class="section doc" id="emails"><div class="wrap"><p class="eyebrow">Emails and SMS</p><h2>Sequence A: started booking, no demo booked yet</h2>
+<p>The VSL page is ungated (2026-10-30), so the first email capture is the contact step of the booking quiz. Trigger: booking-quiz contact form submitted and no appointment within 30 minutes. Exit: demo booked (move to Sequence B).</p>
+<h3>A1. 30 minutes after the contact step, no booking</h3>
+<p><strong>Subject:</strong> You were one click from booking
+<strong>Preview:</strong> Your demo time is still open</p>
 <p>Hey {{contact.first_name}},</p>
-<p>Here is the KIS OS video: <span class="ph-tag">[VSL_URL]</span></p>
-<p>Before you hit play, answer one question honestly:</p>
-<p>If ten new clients paid you next Monday, who would onboard them?</p>
-<p>If the answer is you, the video will make sense fast.</p>
+<p>You got as far as picking a time for your KIS OS demo, then life happened. No problem.</p>
+<p>Grab a time here: <span class="ph-tag">[BOOK_URL]</span></p>
+<p>And if you want to see it first, here is the KIS OS video: <span class="ph-tag">[VSL_URL]</span></p>
+<p>One question to sit with before the call: if ten new clients paid you next Monday, who would onboard them?</p>
 <p>Josh
 Founder, Keep It Simple</p>
 <h3>A2. Day 1</h3>

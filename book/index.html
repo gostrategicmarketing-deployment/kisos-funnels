@@ -18,23 +18,60 @@
 <header class="top">
   <div class="wrap">
     <a class="brand" href="../vsl/" data-keep><img src="../assets/img/kis-mark-white.png" alt=""><span>KIS OS</span></a>
-    <span class="step" id="stepLabel">Step 1 of 2</span>
+    <span class="step" id="qcount">Book a demo</span>
   </div>
 </header>
 
 <main>
-  <section class="hero" style="padding-bottom:20px">
+  <section class="hero" style="padding-top:20px">
     <div class="wrap">
-      <h1>Book your <span class="accent">KIS OS demo.</span></h1>
-      <p class="lede">A call with the KIS OS team about your actual business. You leave with your primary operating constraint and a candid fit decision.</p>
-    </div>
-  </section>
+      <div class="progress" aria-hidden="true"><i id="bar"></i></div>
 
-  <section style="padding-bottom:56px">
-    <div class="wrap">
-      <!-- Step 1: short qualifier. GHL: replace with the GHL survey/form, same fields. -->
-      <div class="card" id="step1">
-        <form class="form" id="qualForm" novalidate>
+      <div class="q on" data-intro>
+        <p class="eyebrow">Book your KIS OS demo</p>
+        <h1>Let's see if KIS OS <span class="accent">fits your business.</span></h1>
+        <p class="lede">Three quick taps, then pick a time. You leave the call with your primary operating constraint and a candid fit decision.</p>
+        <div class="cta-row"><button class="btn block" type="button" id="start">Let's go</button></div>
+        <p class="cta-note">About 30 seconds.</p>
+      </div>
+
+      <div class="q" data-key="business">
+        <h2>What best describes your business?</h2>
+        <div class="choices">
+          <button class="choice" type="button" data-v="online_coach">Online fitness or health coach</button>
+          <button class="choice" type="button" data-v="gym_owner">Gym or studio owner</button>
+          <button class="choice" type="button" data-v="hybrid">Hybrid: online and in person</button>
+          <button class="choice" type="button" data-v="nutrition">Nutrition or wellness brand</button>
+          <button class="choice" type="button" data-v="other">Something else</button>
+        </div>
+      </div>
+
+      <div class="q" data-key="revenue">
+        <h2>Roughly what do you collect in a month?</h2>
+        <p class="hint">So we send you to the right call.</p>
+        <div class="choices">
+          <button class="choice" type="button" data-v="0">Under $10K</button>
+          <button class="choice" type="button" data-v="10000">$10K to $20K</button>
+          <button class="choice" type="button" data-v="20000">$20K to $30K</button>
+          <button class="choice" type="button" data-v="30000">$30K to $50K</button>
+          <button class="choice" type="button" data-v="50000">$50K to $100K</button>
+          <button class="choice" type="button" data-v="100000">$100K or more</button>
+        </div>
+      </div>
+
+      <div class="q" data-key="onboarding">
+        <h2>A new client pays you. What happens next?</h2>
+        <div class="choices">
+          <button class="choice" type="button" data-v="manual">Me or my team onboard them by hand</button>
+          <button class="choice" type="button" data-v="partial">Part automated, part manual</button>
+          <button class="choice" type="button" data-v="auto">It runs on its own: intake, coach assigned, Trainerize ready</button>
+        </div>
+      </div>
+
+      <!-- GHL: post these answers + contact to the GHL form, then show the calendar. -->
+      <div class="q" data-key="contact">
+        <h2>Good fit. <span class="accent">Where do we send the invite?</span></h2>
+        <form class="form" id="contactForm" novalidate style="margin-top:22px">
           <div class="field">
             <label for="fn">First name</label>
             <input id="fn" name="first_name" type="text" autocomplete="given-name" required>
@@ -47,103 +84,108 @@
             <label for="ph">Mobile (for call reminders)</label>
             <input id="ph" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
           </div>
-          <div class="field">
-            <label for="biz">What best describes your business?</label>
-            <select id="biz" name="business" required>
-              <option value="">Choose one</option>
-              <option value="online_coach">Online fitness or health coach</option>
-              <option value="gym_owner">Gym or studio owner</option>
-              <option value="hybrid">Hybrid: online and in person</option>
-              <option value="nutrition">Nutrition or wellness brand</option>
-              <option value="other">Something else</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="rev">Monthly collected revenue, roughly</label>
-            <select id="rev" name="revenue" required>
-              <option value="">Choose one</option>
-              <option value="0">Under $10K</option>
-              <option value="10000">$10K to $20K</option>
-              <option value="20000">$20K to $30K</option>
-              <option value="30000">$30K to $50K</option>
-              <option value="50000">$50K to $100K</option>
-              <option value="100000">$100K or more</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="onb">When a new client pays, what happens next?</label>
-            <select id="onb" name="onboarding" required>
-              <option value="">Choose one</option>
-              <option value="manual">Me or my team onboard them by hand</option>
-              <option value="partial">Part automated, part manual</option>
-              <option value="auto">Fully automated, payment to coach assigned</option>
-            </select>
-          </div>
-          <div class="err" id="qualErr" role="alert"></div>
+          <div class="err" id="cErr" role="alert"></div>
           <button class="btn block" type="submit">Next: pick a time</button>
-          <p class="consent">By continuing you agree to receive calls, texts and emails from Keep It Simple about your demo. Message and data rates may apply. Reply STOP to opt out. <span class="ph-tag">[PRIVACY POLICY LINK]</span></p>
+          <p class="consent">By continuing you agree to receive calls, texts and emails from Keep It Simple about your demo. Message and data rates may apply. Reply STOP to opt out. <a href="https://kisos.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></p>
         </form>
       </div>
 
-      <!-- Step 2: calendar. GHL: embed the demo calendar; set its redirect to /confirmed/. -->
-      <div id="step2" hidden>
-        <div class="ph-box" style="min-height:360px;display:flex;flex-direction:column;justify-content:center;text-align:center;gap:10px">
+      <!-- GHL: embed the demo calendar; set its redirect to /confirmed/. -->
+      <div class="q" data-key="calendar">
+        <h2>Pick a time, <span class="accent" data-first-name>friend</span>.</h2>
+        <div class="ph-box" style="min-height:360px;display:flex;flex-direction:column;justify-content:center;text-align:center;gap:10px;margin-top:22px">
           <strong>[GHL DEMO CALENDAR EMBED]</strong>
-          <span>The booking calendar goes here, prefilled with the details from step 1. After booking it redirects to the confirmation page.</span>
+          <span>The booking calendar goes here, prefilled with your details. After booking it redirects to the confirmation page.</span>
         </div>
         <div class="cta-row">
-          <a class="btn block" href="../confirmed/" data-keep id="previewConfirm">Preview the confirmation page</a>
-          <button class="back" type="button" id="backTo1">Back</button>
+          <a class="btn block" href="../confirmed/" data-keep>Preview the confirmation page</a>
         </div>
       </div>
+
+      <button class="back" type="button" id="back" hidden>Back</button>
     </div>
   </section>
 </main>
 
 <footer class="foot">
   <div class="wrap">
-    <div>&copy; 2026 KIS. All rights reserved. <span class="ph-tag">[PRIVACY]</span> <span class="ph-tag">[TERMS]</span></div>
+    <div>&copy; 2026 KIS. All rights reserved. <a href="https://kisos.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a> · <a href="https://kisos.com/terms" target="_blank" rel="noopener">Terms</a></div>
     <div class="spec">Draft for review. Items in gold brackets are placeholders waiting on real assets.</div>
   </div>
 </footer>
 
 <script>
 (function () {
-  var f = document.getElementById("qualForm");
-  var lead = KIS.get("lead") || {};
-  // Prefill from the VSL opt-in or the quiz.
-  ["first_name", "email", "phone", "business", "revenue", "onboarding"].forEach(function (k) {
-    if (lead[k] != null && f[k]) f[k].value = lead[k];
-  });
+  var steps = Array.prototype.slice.call(document.querySelectorAll(".q"));
+  var idx = {}; steps.forEach(function (s, n) { idx[s.getAttribute("data-key") || "intro"] = n; });
+  var QUESTIONS = ["business", "revenue", "onboarding"];
+  var i = 0, lead = KIS.get("lead") || {};
+  if (new URLSearchParams(location.search).get("reset")) { delete lead.business; delete lead.revenue; delete lead.onboarding; KIS.set({ lead: lead }); }
+  var bar = document.getElementById("bar"), back = document.getElementById("back"), qcount = document.getElementById("qcount");
+  var f = document.getElementById("contactForm");
+  ["first_name", "email", "phone"].forEach(function (k) { if (lead[k]) f[k].value = lead[k]; });
 
-  function show(step) {
-    document.getElementById("step1").hidden = step !== 1;
-    document.getElementById("step2").hidden = step !== 2;
-    document.getElementById("stepLabel").textContent = "Step " + step + " of 2";
+  function label(key) {
+    var q = QUESTIONS.indexOf(key);
+    if (q > -1) return "Question " + (q + 1) + " of 3";
+    return { intro: "Book a demo", contact: "Almost there", calendar: "Pick a time" }[key];
+  }
+  function go(n) {
+    steps[i].classList.remove("on");
+    i = n;
+    steps[i].classList.add("on");
+    var key = steps[i].getAttribute("data-key") || "intro";
+    bar.style.width = (i / (steps.length - 1) * 100) + "%";
+    back.hidden = i === 0;
+    qcount.textContent = label(key);
+    document.querySelectorAll("[data-first-name]").forEach(function (el) { if (lead.first_name) el.textContent = lead.first_name; });
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
+  // First unanswered question; quiz-funnel leads skip what they already told us.
+  function next() {
+    for (var q = 0; q < QUESTIONS.length; q++) if (lead[QUESTIONS[q]] == null) return idx[QUESTIONS[q]];
+    if (Number(lead.revenue) < KIS.ICP_FLOOR) { KIS.track("DisqualifiedLead", { revenue: lead.revenue }); KIS.go("../not-yet/"); return null; }
+    return idx.contact;
+  }
+  function advance() { var n = next(); if (n != null) go(n); }
+
+  document.getElementById("start").addEventListener("click", function () { KIS.track("BookStart"); advance(); });
+  back.addEventListener("click", function () {
+    var key = steps[i].getAttribute("data-key");
+    if (QUESTIONS.indexOf(key) > -1) delete lead[QUESTIONS[QUESTIONS.indexOf(key) - 1]];
+    if (key === "contact") delete lead.onboarding;
+    KIS.set({ lead: lead });
+    go(Math.max(0, i - 1));
+  });
+
+  QUESTIONS.forEach(function (key) {
+    var step = steps[idx[key]];
+    step.querySelectorAll(".choice").forEach(function (btn) {
+      if (lead[key] === btn.getAttribute("data-v")) btn.classList.add("sel");
+      btn.addEventListener("click", function () {
+        step.querySelectorAll(".choice").forEach(function (b) { b.classList.remove("sel"); });
+        btn.classList.add("sel");
+        lead[key] = btn.getAttribute("data-v");
+        KIS.set({ lead: lead });
+        setTimeout(advance, 180);
+      });
+    });
+  });
 
   f.addEventListener("submit", function (e) {
     e.preventDefault();
-    var err = document.getElementById("qualErr");
-    var data = {};
-    ["first_name", "email", "phone", "business", "revenue", "onboarding"].forEach(function (k) { data[k] = f[k].value.trim(); });
-    if (!data.first_name) { err.textContent = "Please add your first name."; return; }
-    if (!KIS.validEmail(data.email)) { err.textContent = "Please add a valid email."; return; }
-    if (data.phone.replace(/\D/g, "").length < 7) { err.textContent = "Please add a mobile number for reminders."; return; }
-    if (!data.business || !data.revenue || !data.onboarding) { err.textContent = "Please answer all three questions."; return; }
+    var err = document.getElementById("cErr");
+    var fn = f.first_name.value.trim(), em = f.email.value.trim(), ph = f.phone.value.trim();
+    if (!fn) { err.textContent = "Please add your first name."; return; }
+    if (!KIS.validEmail(em)) { err.textContent = "Please add a valid email."; return; }
+    if (ph.replace(/\D/g, "").length < 7) { err.textContent = "Please add a mobile number for reminders."; return; }
     err.textContent = "";
-    for (var k in data) lead[k] = data[k];
+    lead.first_name = fn; lead.email = em; lead.phone = ph;
     KIS.set({ lead: lead });
-
-    var qualified = Number(data.revenue) >= KIS.ICP_FLOOR;
-    // GHL: post the form here; tag qualified vs not and send different pixel events.
-    KIS.track(qualified ? "QualifiedLead" : "DisqualifiedLead", { revenue: data.revenue, business: data.business });
-    if (!qualified) { KIS.go("../not-yet/"); return; }
-    show(2);
+    // GHL: post the form here (starts the booking-abandon emails if no booking follows).
+    KIS.track("QualifiedLead", { revenue: lead.revenue, business: lead.business });
+    go(idx.calendar);
   });
-
-  document.getElementById("backTo1").addEventListener("click", function () { show(1); });
 })();
 </script>
 </body>
