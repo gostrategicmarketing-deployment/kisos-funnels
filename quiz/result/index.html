@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#090909">
+<title>KIS OS | Your Result</title>
+<link rel="icon" href="../../assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/site.css">
+<script src="../../assets/js/funnel.js"></script>
+</head>
+<body class="glow">
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../../vsl/" data-keep><img src="../../assets/img/kis-mark-white.png" alt=""><span>KIS OS</span></a>
+    <span class="step">Your result</span>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <span class="result-badge" id="badge">Your result</span>
+      <h1 style="margin-top:18px" id="rTitle">Your result</h1>
+      <p class="lede" id="rBody"></p>
+      <p class="lede" id="rGoal"></p>
+      <div class="cta-row" id="rCtas"></div>
+      <p class="cta-note" id="rNote"></p>
+    </div>
+  </section>
+
+  <section class="section" id="rWhat">
+    <div class="wrap">
+      <h2>What KIS OS changes.</h2>
+      <ul class="list">
+        <li><strong>Payment triggers intake.</strong> Onboarding routes the work, creates the client, assigns the coach and begins Trainerize delivery.</li>
+        <li><strong>A qualified lead enters the right pipeline</strong> and always has an owner.</li>
+        <li><strong>The team owns defined work.</strong> The Command Center surfaces exceptions.</li>
+        <li><strong>Keep, connect, improve, migrate.</strong> No reckless rip-and-replace.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div>&copy; 2026 KIS. All rights reserved. <span class="ph-tag">[PRIVACY]</span> <span class="ph-tag">[TERMS]</span></div>
+    <div class="spec">Draft for review. Your result is based only on your own answers. Items in gold brackets are placeholders.</div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var R = {
+    "switchboard": {
+      badge: "You're the switchboard",
+      title: 'Every handoff routes <span class="accent">through you.</span>',
+      body: "Based on your answers, onboarding, coach questions and follow-up still depend on you to connect them. That makes you the operating system. It is not a people problem. It is a systems problem, and it is exactly what KIS OS is built for.",
+      primary: ["Book a KIS OS demo", "../../book/"],
+      secondary: ["Watch how it works first", "../../vsl/?gate=0"],
+      note: "On the call we map where it breaks first."
+    },
+    "duct-tape": {
+      badge: "You've outgrown the duct tape",
+      title: 'Your business outgrew <span class="accent">the duct tape.</span>',
+      body: "Based on your answers, some of your back end runs on its own, but the pieces are stitched together with workarounds, and the gaps still land on you or your team. You probably don't need to start over. Tools solve pieces. KIS OS owns the handoffs between them.",
+      primary: ["Book a KIS OS demo", "../../book/"],
+      secondary: ["Watch how it works first", "../../vsl/?gate=0"],
+      note: "On the call: keep, connect, improve or migrate, tool by tool."
+    },
+    "next-stage": {
+      badge: "Ready for the next stage",
+      title: 'A lot already runs <span class="accent">without you.</span>',
+      body: "Based on your answers, much of your back end already moves on its own. The next question is visibility: what moved, what is stuck, who owns it next, and what needs your decision. That is what the KIS OS Command Center is for.",
+      primary: ["Watch how KIS OS works", "../../vsl/?gate=0"],
+      secondary: ["Book a KIS OS demo", "../../book/"],
+      note: ""
+    },
+    "foundation": {
+      badge: "Build demand first",
+      title: 'KIS OS probably isn\u2019t your <span class="accent">next step yet.</span>',
+      body: "Based on what you shared, the first job is a proven offer and steady demand. KIS OS is built for businesses that already have both. Once demand is consistent, the back end becomes the bottleneck, and that is when it fits.",
+      primary: null,
+      secondary: ["Watch how KIS OS works", "../../vsl/?gate=0"],
+      note: "We'll email you a copy of this result."
+    }
+  };
+  var GOAL = {
+    more_clients: "You said more clients matters most. Worth knowing before you add them: more demand does not fix the business. It exposes it.",
+    retention: "You said keeping clients longer matters most. In KIS OS, retention signals stay visible across the whole client journey, so they surface earlier.",
+    time: "You said getting your hours back matters most. In KIS OS the system handles routing and reminders, the team owns defined work, and you keep only the decisions the founder should make.",
+    team: "You said a team that runs without you matters most. In KIS OS each team member owns defined work with clear inputs and standards."
+  };
+
+  var type = new URLSearchParams(location.search).get("type") || KIS.get("quiz_result") || "switchboard";
+  var r = R[type] || R.switchboard;
+  var lead = KIS.get("lead") || {};
+
+  document.getElementById("badge").textContent = r.badge;
+  document.getElementById("rTitle").innerHTML = r.title;
+  document.getElementById("rBody").textContent = (lead.first_name ? lead.first_name + ", " + r.body.charAt(0).toLowerCase() + r.body.slice(1) : r.body);
+  document.getElementById("rGoal").textContent = (type !== "foundation" && GOAL[lead.goal]) || "";
+  document.getElementById("rNote").textContent = r.note;
+  if (type === "foundation") document.getElementById("rWhat").hidden = true;
+
+  var ctas = document.getElementById("rCtas");
+  [r.primary, r.secondary].forEach(function (c, n) {
+    if (!c) return;
+    var a = document.createElement("a");
+    a.className = "btn block" + ((n === 1 || !r.primary) ? " ghost" : "");
+    a.href = c[1];
+    a.setAttribute("data-keep", "");
+    a.textContent = c[0];
+    ctas.appendChild(a);
+  });
+  document.querySelectorAll("a[data-keep]").forEach(function (a) {
+    a.addEventListener("click", function (e) { e.preventDefault(); KIS.go(a.getAttribute("href")); });
+  });
+  KIS.track("QuizResult", { result: type });
+})();
+</script>
+</body>
+</html>
