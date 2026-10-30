@@ -270,7 +270,6 @@ html { background: var(--bg); }
 .tabpanel.on { display: grid; gap: 10px; animation: rise 0.25s ease both; }
 .tabpanel h3 { margin-bottom: 6px; }
 .foot-logo { width: 200px; margin-bottom: 8px; }
-.lede.sub { font-size: 20px; line-height: 1.45; margin-top: 16px; }
 
 /* Founder Bottleneck Test */
 .intro { text-align: left; }
