@@ -219,41 +219,57 @@ Founder, Keep It Simple</p>
 <p>Grab a new time here: <span class="ph-tag">[BOOK_URL]</span></p>
 <p>Josh</p>
 <hr />
-<h2>Sequence C: quiz result follow-up</h2>
-<p>Trigger: quiz submitted. One email per result type, sent immediately, then the contact joins Sequence A from A2.</p>
-<h3>C1. Result: You're the switchboard (high founder dependence, qualified)</h3>
-<p><strong>Subject:</strong> Your result: you're the switchboard
-<strong>Preview:</strong> What your answers said</p>
+<h2>Sequence C: Founder Bottleneck Test follow-up</h2>
+<p>The quiz is a standalone test (2026-10-30): results show on screen with no gate, and email is optional ("Send me my results"). Trigger: that optional form. One email per archetype, sent immediately, carrying their score and biggest bottleneck (<code>{{contact.quiz_score}}</code>, <code>{{contact.quiz_bottleneck}}</code>, <code>{{contact.quiz_tip}}</code> as GHL custom fields). Then qualified contacts ($30K+) join Sequence A from A2; under-$30K contacts get tagged <code>kis-quiz-not-yet</code> and nothing else.</p>
+<h3>C1. The Switchboard Operator (score 76 to 100)</h3>
+<p><strong>Subject:</strong> Your score: {{contact.quiz_score}}/100, The Switchboard Operator
+<strong>Preview:</strong> Every handoff plugs in through you</p>
 <p>{{contact.first_name}},</p>
-<p>Based on your answers, most handoffs in your business still route through you. Onboarding, coach questions, follow-up: you are the one connecting them.</p>
-<p>That is not a people problem. It is a systems problem. And it is exactly what KIS OS is built for.</p>
-<p>Book a demo and we'll map where it breaks first: <span class="ph-tag">[BOOK_URL]</span></p>
+<p>Here's your Founder Bottleneck result: {{contact.quiz_score}} out of 100. The Switchboard Operator.</p>
+<p>Sales, onboarding, coach questions, follow-up: right now you're the one connecting the calls. That makes you the operating system. It's not a people problem. It's a systems problem.</p>
+<p>Your biggest bottleneck: {{contact.quiz_bottleneck}}.
+Try this week: {{contact.quiz_tip}}</p>
+<p>Want the switchboard gone? Book a demo and we'll map what to install first: <span class="ph-tag">[BOOK_URL]</span></p>
 <p>Josh</p>
-<h3>C2. Result: You've outgrown the duct tape (partly automated, qualified)</h3>
-<p><strong>Subject:</strong> Your result: you've outgrown the duct tape
-<strong>Preview:</strong> Some of it works. The handoffs don't.</p>
+<h3>C2. The Duct-Tape Engineer (score 51 to 75)</h3>
+<p><strong>Subject:</strong> Your score: {{contact.quiz_score}}/100, The Duct-Tape Engineer
+<strong>Preview:</strong> Clever workarounds, holding it all together</p>
 <p>{{contact.first_name}},</p>
-<p>Based on your answers, some of your back end runs on its own, but the pieces are stitched together with workarounds, and the gaps still land on you or your team.</p>
-<p>The good news: you probably don't need to start over. Keep what works, connect it, improve it, migrate what doesn't.</p>
-<p>See how it fits your business: <span class="ph-tag">[BOOK_URL]</span></p>
+<p>Your Founder Bottleneck result: {{contact.quiz_score}} out of 100. The Duct-Tape Engineer.</p>
+<p>You've built a lot, and it mostly works, as long as you're there to patch the gaps between the tools. More clients means more tape.</p>
+<p>Your biggest bottleneck: {{contact.quiz_bottleneck}}.
+Try this week: {{contact.quiz_tip}}</p>
+<p>You probably don't need to start over. Keep what works, connect it, improve it, migrate what doesn't. See how: <span class="ph-tag">[BOOK_URL]</span></p>
 <p>Josh</p>
-<h3>C3. Result: You're ready for the next stage (mostly automated, qualified)</h3>
-<p><strong>Subject:</strong> Your result: ready for the next stage
-<strong>Preview:</strong> The next ceiling is visibility</p>
+<h3>C3. The Air Traffic Controller (score 26 to 50)</h3>
+<p><strong>Subject:</strong> Your score: {{contact.quiz_score}}/100, The Air Traffic Controller
+<strong>Preview:</strong> Systems exist. Everything still lands on your radar.</p>
 <p>{{contact.first_name}},</p>
-<p>Based on your answers, a lot of your back end already moves without you. That puts you ahead.</p>
-<p>The next question is whether you can see it: what moved, what is stuck, who owns it next, and what needs your decision. That is what the KIS OS Command Center is for.</p>
-<p>Watch how it works: <span class="ph-tag">[VSL_URL]</span></p>
+<p>Your Founder Bottleneck result: {{contact.quiz_score}} out of 100. The Air Traffic Controller.</p>
+<p>A lot already runs on its own. But the exceptions route to you, so you're not doing every job, you're watching every job.</p>
+<p>Your biggest bottleneck: {{contact.quiz_bottleneck}}.
+Try this week: {{contact.quiz_tip}}</p>
+<p>Here's how KIS OS takes the exceptions off your radar: <span class="ph-tag">[VSL_URL]</span></p>
 <p>Josh</p>
-<h3>C4. Result: Build demand first (below the ICP floor, not qualified)</h3>
-<p><strong>Subject:</strong> Your result: build demand first
-<strong>Preview:</strong> An honest answer</p>
+<h3>C4. The Architect (score 0 to 25)</h3>
+<p><strong>Subject:</strong> Your score: {{contact.quiz_score}}/100, The Architect
+<strong>Preview:</strong> Your business runs on systems, not on you</p>
 <p>{{contact.first_name}},</p>
-<p>Honest answer: based on what you shared, KIS OS is probably not your next step yet. It is built for businesses that already have a proven offer and consistent demand.</p>
-<p>Focus on the offer and on getting clients in the door first. When demand is consistent, the back end becomes the bottleneck, and that is when we can help.</p>
-<p>Here is the video so you know what that stage looks like: <span class="ph-tag">[VSL_URL]</span></p>
+<p>Your Founder Bottleneck result: {{contact.quiz_score}} out of 100. The Architect. Most of your client journey moves without you in the middle. Nice work.</p>
+<p>Your next ceiling is visibility: what moved, what is stuck, who owns it next, and what needs your decision.</p>
+<p>Watch how the KIS OS Command Center handles that: <span class="ph-tag">[VSL_URL]</span></p>
 <p>Josh</p>
-<p>(Do not enroll C4 contacts in Sequence A. Tag <code>kis-quiz-not-yet</code> for a later newsletter.)</p></div></section>
+<h3>C5. Under $30K a month (any archetype)</h3>
+<p>Send in place of C1 to C4 when the revenue answer is under $30K.</p>
+<p><strong>Subject:</strong> Your score: {{contact.quiz_score}}/100
+<strong>Preview:</strong> Plus the one fix worth doing now</p>
+<p>{{contact.first_name}},</p>
+<p>Your Founder Bottleneck result: {{contact.quiz_score}} out of 100, {{contact.quiz_archetype}}.</p>
+<p>Your biggest bottleneck: {{contact.quiz_bottleneck}}.
+Try this week: {{contact.quiz_tip}}</p>
+<p>Honest note: KIS OS is built for businesses already collecting $30K a month or more, so it's probably not your next step yet. Fix the bottleneck above, build steady demand, and the rest gets easier.</p>
+<p>Josh</p>
+<p>(Do not enroll C5 contacts in Sequence A. Tag <code>kis-quiz-not-yet</code>.)</p></div></section>
 </main>
 <footer class="foot"><div class="wrap"><div class="spec">Draft for review. Not final copy.</div></div></footer>
 </body>

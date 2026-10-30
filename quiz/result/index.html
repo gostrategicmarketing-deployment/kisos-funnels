@@ -5,44 +5,95 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#090909">
-<title>KIS OS | Your Result</title>
+<title>My Founder Bottleneck Result | KIS OS</title>
 <link rel="icon" href="../../assets/img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../assets/css/site.css">
 <script src="../../assets/js/funnel.js"></script>
+<script src="../../assets/js/quiz-data.js"></script>
 </head>
 <body class="glow">
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="../../vsl/" data-keep><img src="../../assets/img/kis-mark-white.png" alt=""><span>KIS OS</span></a>
-    <span class="step">Your result</span>
+    <a class="brand" href="../"><img src="../../assets/img/kis-mark-white.png" alt=""><span>KIS OS</span></a>
+    <span class="step" id="who">Your result</span>
   </div>
 </header>
 
 <main>
-  <section class="hero">
+  <section class="hero center" style="padding-top:24px">
     <div class="wrap">
-      <span class="result-badge" id="badge">Your result</span>
-      <h1 style="margin-top:18px" id="rTitle">Your result</h1>
-      <p class="lede" id="rBody"></p>
-      <p class="lede" id="rGoal"></p>
-      <div class="cta-row" id="rCtas"></div>
-      <p class="cta-note" id="rNote"></p>
+      <p class="eyebrow">The Founder Bottleneck Test</p>
+      <div class="gauge" aria-hidden="true">
+        <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" class="g-bg"/><circle cx="60" cy="60" r="52" class="g-fg" id="gArc"/></svg>
+        <div class="g-num"><strong id="gNum">0</strong><span>/ 100</span></div>
+      </div>
+      <p class="small" style="margin-top:6px">Founder dependence score</p>
+      <div class="arch">
+        <div class="arch-emoji" id="aEmoji"></div>
+        <h1 id="aName"></h1>
+        <p class="lede" id="aLine" style="margin-top:8px"></p>
+      </div>
     </div>
   </section>
 
-  <section class="section" id="rWhat">
+  <section class="section tight">
     <div class="wrap">
-      <h2>What KIS OS changes.</h2>
-      <ul class="list">
-        <li><strong>Payment triggers intake.</strong> Onboarding routes the work, creates the client, assigns the coach and begins Trainerize delivery.</li>
-        <li><strong>A qualified lead enters the right pipeline</strong> and always has an owner.</li>
-        <li><strong>The team owns defined work.</strong> The Command Center surfaces exceptions.</li>
-        <li><strong>Keep, connect, improve, migrate.</strong> No reckless rip-and-replace.</li>
-      </ul>
+      <p class="lede" id="aBody" style="margin-top:0"></p>
+      <div class="scale" id="scale"></div>
+    </div>
+  </section>
+
+  <section class="section tight">
+    <div class="wrap">
+      <p class="eyebrow">Where it runs through you</p>
+      <h2>Your handoff breakdown.</h2>
+      <div class="bars" id="bars"></div>
+    </div>
+  </section>
+
+  <section class="section tight">
+    <div class="wrap">
+      <p class="eyebrow">Your biggest bottleneck</p>
+      <h2 id="bName"></h2>
+      <div class="tile" style="margin-top:18px"><div class="k">Try this week</div><p id="bTip"></p></div>
+      <div class="tile" style="margin-top:10px"><div class="k">How KIS OS handles it</div><p id="bKis"></p></div>
+    </div>
+  </section>
+
+  <section class="section tight" id="nextStep">
+    <div class="wrap">
+      <h2 id="ctaHead"></h2>
+      <p class="lede" id="ctaBody"></p>
+      <div class="cta-row" id="ctas"></div>
+    </div>
+  </section>
+
+  <section class="section tight" id="emailBox">
+    <div class="wrap">
+      <div class="card">
+        <h3>Want this breakdown in your inbox?</h3>
+        <p class="small" style="margin-top:6px">Your score, your archetype and the fix for your biggest bottleneck. One email, plus a few short follow-ups from Josh you can unsubscribe from anytime.</p>
+        <form class="form" id="emailForm" novalidate style="margin-top:14px">
+          <div class="field"><label for="fn">First name</label><input id="fn" name="first_name" type="text" autocomplete="given-name"></div>
+          <div class="field"><label for="em">Email</label><input id="em" name="email" type="email" autocomplete="email" inputmode="email"></div>
+          <div class="err" id="eErr" role="alert"></div>
+          <button class="btn block" type="submit">Send me my results</button>
+          <p class="consent"><a href="https://kisos.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></p>
+        </form>
+        <p class="lede" id="emailDone" hidden style="margin:0">Sent. Check your inbox, <span data-first-name>friend</span>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tight center">
+    <div class="wrap">
+      <h3>Know a founder who's the switchboard?</h3>
+      <div class="cta-row"><button class="btn ghost block" type="button" id="share">Share this test</button></div>
+      <p class="cta-note" id="shareNote"></p>
     </div>
   </section>
 </main>
@@ -50,78 +101,108 @@
 <footer class="foot">
   <div class="wrap">
     <div>&copy; 2026 KIS. All rights reserved. <a href="https://kisos.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a> · <a href="https://kisos.com/terms" target="_blank" rel="noopener">Terms</a></div>
-    <div class="spec">Draft for review. Your result is based only on your own answers. Items in gold brackets are placeholders.</div>
+    <div class="spec">Your score is based only on your own answers. It is a self-assessment, not a diagnosis of your business.</div>
   </div>
 </footer>
 
 <script>
 (function () {
-  var R = {
-    "switchboard": {
-      badge: "You're the switchboard",
-      title: 'Every handoff routes <span class="accent">through you.</span>',
-      body: "Based on your answers, onboarding, coach questions and follow-up still depend on you to connect them. That makes you the operating system. It is not a people problem. It is a systems problem, and it is exactly what KIS OS is built for.",
-      primary: ["Book a KIS OS demo", "../../book/"],
-      secondary: ["Watch how it works first", "../../vsl/"],
-      note: "On the call we map where it breaks first."
-    },
-    "duct-tape": {
-      badge: "You've outgrown the duct tape",
-      title: 'Your business outgrew <span class="accent">the duct tape.</span>',
-      body: "Based on your answers, some of your back end runs on its own, but the pieces are stitched together with workarounds, and the gaps still land on you or your team. You probably don't need to start over. Tools solve pieces. KIS OS owns the handoffs between them.",
-      primary: ["Book a KIS OS demo", "../../book/"],
-      secondary: ["Watch how it works first", "../../vsl/"],
-      note: "On the call: keep, connect, improve or migrate, tool by tool."
-    },
-    "next-stage": {
-      badge: "Ready for the next stage",
-      title: 'A lot already runs <span class="accent">without you.</span>',
-      body: "Based on your answers, much of your back end already moves on its own. The next question is visibility: what moved, what is stuck, who owns it next, and what needs your decision. That is what the KIS OS Command Center is for.",
-      primary: ["Watch how KIS OS works", "../../vsl/"],
-      secondary: ["Book a KIS OS demo", "../../book/"],
-      note: ""
-    },
-    "foundation": {
-      badge: "Build demand first",
-      title: 'KIS OS probably isn\u2019t your <span class="accent">next step yet.</span>',
-      body: "Based on what you shared, the first job is a proven offer and steady demand. KIS OS is built for businesses that already have both. Once demand is consistent, the back end becomes the bottleneck, and that is when it fits.",
-      primary: null,
-      secondary: ["Watch how KIS OS works", "../../vsl/"],
-      note: "We'll email you a copy of this result."
-    }
-  };
-  var GOAL = {
-    more_clients: "You said more clients matters most. Worth knowing before you add them: more demand does not fix the business. It exposes it.",
-    retention: "You said keeping clients longer matters most. In KIS OS, retention signals stay visible across the whole client journey, so they surface earlier.",
-    time: "You said getting your hours back matters most. In KIS OS the system handles routing and reminders, the team owns defined work, and you keep only the decisions the founder should make.",
-    team: "You said a team that runs without you matters most. In KIS OS each team member owns defined work with clear inputs and standards."
-  };
+  var p = new URLSearchParams(location.search);
+  var score = Math.max(0, Math.min(100, Number(p.get("s")) || 0));
+  var code = (p.get("a") || "").replace(/[^0-3]/g, "");
+  if (code.length !== KISQ.ORDER.length) { location.replace("../"); return; }
+  var mine = p.get("me") === "1" && KIS.get("quiz");
+  var quiz = KIS.get("quiz") || {};
+  var a = KISQ.archetype(score);
 
-  var type = new URLSearchParams(location.search).get("type") || KIS.get("quiz_result") || "switchboard";
-  var r = R[type] || R.switchboard;
+  document.getElementById("who").textContent = mine ? "Your result" : "A founder's result";
+  document.getElementById("aEmoji").textContent = a.emoji;
+  document.getElementById("aName").textContent = a.name;
+  document.getElementById("aLine").textContent = a.line;
+  document.getElementById("aBody").textContent = a.body;
+
+  // Gauge counts up.
+  var arc = document.getElementById("gArc"), C = 2 * Math.PI * 52, num = document.getElementById("gNum");
+  arc.style.strokeDasharray = C; arc.style.strokeDashoffset = C;
+  requestAnimationFrame(function () { setTimeout(function () { arc.style.strokeDashoffset = C * (1 - score / 100); }, 150); });
+  var t0 = null;
+  function tick(t) { if (!t0) t0 = t; var k = Math.min(1, (t - t0) / 1200); num.textContent = Math.round(score * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(tick); }
+  requestAnimationFrame(tick);
+
+  // Archetype scale with "you are here".
+  document.getElementById("scale").innerHTML = KISQ.ARCHETYPES.map(function (x) {
+    return '<div class="' + (x.id === a.id ? "on" : "") + '"><span>' + x.emoji + '</span>' + x.name.replace("The ", "") + '</div>';
+  }).join("");
+
+  // Area bars, worst first.
+  var areas = KISQ.ORDER.map(function (k, n) { return { k: k, s: Number(code[n]) }; });
+  var sorted = areas.slice().sort(function (x, y) { return y.s - x.s; });
+  var words = ["Runs without you", "Mostly handled", "Leans on you", "Runs through you"];
+  document.getElementById("bars").innerHTML = sorted.map(function (x) {
+    return '<div class="bar s' + x.s + '"><div class="bar-top"><strong>' + KISQ.AREAS[x.k].name + '</strong><span>' + words[x.s] + '</span></div><div class="bar-track"><i style="--w:' + Math.max(6, x.s / 3 * 100) + '%"></i></div></div>';
+  }).join("");
+  setTimeout(function () { document.querySelectorAll(".bar i").forEach(function (b) { b.classList.add("go"); }); }, 300);
+
+  var worst = KISQ.AREAS[sorted[0].k];
+  document.getElementById("bName").textContent = sorted[0].s === 0 ? "None stood out. Nice work." : worst.name + ".";
+  document.getElementById("bTip").textContent = worst.tip;
+  document.getElementById("bKis").textContent = worst.kis;
+
+  // Next step: depends on whose result this is and the business size.
+  var ctas = document.getElementById("ctas");
+  function btn(label, href, ghost) {
+    var b = document.createElement("a"); b.className = "btn block" + (ghost ? " ghost" : ""); b.textContent = label;
+    b.href = href; b.addEventListener("click", function (e) { e.preventDefault(); KIS.go(href); }); ctas.appendChild(b);
+  }
+  var head = document.getElementById("ctaHead"), body = document.getElementById("ctaBody");
+  if (!mine) {
+    head.textContent = "Where do you land?";
+    body.textContent = "Seven scenarios, 90 seconds. Find out how much of your business still runs through you.";
+    btn("Take the test", "../");
+    document.getElementById("emailBox").hidden = true;
+  } else if (Number(quiz.revenue) < KIS.ICP_FLOOR) {
+    head.textContent = "Build it right from the start.";
+    body.textContent = "KIS OS is built for businesses already collecting $30K a month or more. Until then, the fix above is your best next move. Here's what the next stage looks like when you get there.";
+    btn("Watch how KIS OS works", "../../vsl/", true);
+  } else if (score > 50) {
+    head.textContent = "Want the switchboard gone?";
+    body.textContent = "On a KIS OS demo we map where growth is breaking in your business and what to install first. You leave with a candid fit decision.";
+    btn("Book a KIS OS demo", "../../book/");
+    btn("Watch the 6-minute video first", "../../vsl/", true);
+  } else {
+    head.textContent = "See what the next stage looks like.";
+    body.textContent = "A lot already runs without you. Watch how KIS OS connects the rest, then grab a demo if you want your Priority Map.";
+    btn("Watch the 6-minute video", "../../vsl/");
+    btn("Book a KIS OS demo", "../../book/", true);
+  }
+  if (mine) KIS.track("QuizResult", { score: score, archetype: a.id });
+
+  // Optional email.
   var lead = KIS.get("lead") || {};
-
-  document.getElementById("badge").textContent = r.badge;
-  document.getElementById("rTitle").innerHTML = r.title;
-  document.getElementById("rBody").textContent = (lead.first_name ? lead.first_name + ", " + r.body.charAt(0).toLowerCase() + r.body.slice(1) : r.body);
-  document.getElementById("rGoal").textContent = (type !== "foundation" && GOAL[lead.goal]) || "";
-  document.getElementById("rNote").textContent = r.note;
-  if (type === "foundation") document.getElementById("rWhat").hidden = true;
-
-  var ctas = document.getElementById("rCtas");
-  [r.primary, r.secondary].forEach(function (c, n) {
-    if (!c) return;
-    var a = document.createElement("a");
-    a.className = "btn block" + ((n === 1 || !r.primary) ? " ghost" : "");
-    a.href = c[1];
-    a.setAttribute("data-keep", "");
-    a.textContent = c[0];
-    ctas.appendChild(a);
+  var f = document.getElementById("emailForm");
+  if (lead.first_name) f.first_name.value = lead.first_name;
+  if (lead.email) f.email.value = lead.email;
+  f.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var fn = f.first_name.value.trim(), em = f.email.value.trim(), err = document.getElementById("eErr");
+    if (!fn) { err.textContent = "Please add your first name."; return; }
+    if (!KIS.validEmail(em)) { err.textContent = "Please add a valid email."; return; }
+    lead.first_name = fn; lead.email = em; KIS.set({ lead: lead });
+    // GHL: post contact + score/archetype; starts email Sequence C for this archetype.
+    KIS.track("QuizEmail", { archetype: a.id });
+    f.hidden = true;
+    document.querySelector("[data-first-name]").textContent = fn;
+    document.getElementById("emailDone").hidden = false;
   });
-  document.querySelectorAll("a[data-keep]").forEach(function (a) {
-    a.addEventListener("click", function (e) { e.preventDefault(); KIS.go(a.getAttribute("href")); });
+
+  // Share: sends people to the test itself, with the score in the message text only.
+  document.getElementById("share").addEventListener("click", function () {
+    var url = location.origin + location.pathname.replace(/result\/?$/, "");
+    var text = "I scored " + score + "/100 on the Founder Bottleneck Test: " + a.name + ". Are you the operating system of your business?";
+    if (navigator.share) { navigator.share({ title: "The Founder Bottleneck Test", text: text, url: url }).catch(function () {}); }
+    else if (navigator.clipboard) { navigator.clipboard.writeText(text + " " + url).then(function () { document.getElementById("shareNote").textContent = "Link copied."; }); }
+    KIS.track("QuizShare");
   });
-  KIS.track("QuizResult", { result: type });
 })();
 </script>
 </body>

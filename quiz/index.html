@@ -5,183 +5,182 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#090909">
-<title>KIS OS | Who Runs Your Back End?</title>
+<title>Are You the Operating System? | The Founder Bottleneck Test</title>
+<meta name="description" content="Seven quick scenarios. Find out how much of your fitness business still runs through you.">
 <link rel="icon" href="../assets/img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/site.css">
 <script src="../assets/js/funnel.js"></script>
+<script src="../assets/js/quiz-data.js"></script>
 </head>
 <body class="glow">
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="../vsl/" data-keep><img src="../assets/img/kis-mark-white.png" alt=""><span>KIS OS</span></a>
-    <span class="step" id="qcount">60-second quiz</span>
+    <a class="brand" href="./"><img src="../assets/img/kis-mark-white.png" alt=""><span>KIS OS</span></a>
+    <span class="step" id="qcount">90-second test</span>
   </div>
 </header>
 
 <main>
-  <section class="hero" style="padding-top:20px">
+  <section class="hero" style="padding-top:16px">
     <div class="wrap">
-      <div class="progress" aria-hidden="true"><i id="bar"></i></div>
 
-      <div class="q on" data-intro>
-        <p class="eyebrow">For fitness coaches and gym owners</p>
-        <h1>Is your business running you?</h1>
-        <p class="lede">Six quick questions. Find out where your back end still routes through you, and what to fix first.</p>
-        <div class="cta-row"><button class="btn block" type="button" id="start">Start the quiz</button></div>
-        <p class="cta-note">About 60 seconds. No sales pitch in the middle.</p>
+      <!-- Live meter: moves with every answer -->
+      <div class="meter" id="meter" hidden>
+        <div class="meter-top"><span>Runs itself</span><strong id="meterLabel">Founder dependence</strong><span>You are the OS</span></div>
+        <div class="meter-track"><i id="meterFill"></i><b id="meterNeedle"></b></div>
       </div>
 
-      <div class="q" data-key="business">
-        <h2>What best describes your business?</h2>
-        <div class="choices">
-          <button class="choice" type="button" data-v="online_coach">Online fitness or health coach</button>
-          <button class="choice" type="button" data-v="gym_owner">Gym or studio owner</button>
-          <button class="choice" type="button" data-v="hybrid">Hybrid: online and in person</button>
-          <button class="choice" type="button" data-v="nutrition">Nutrition or wellness brand</button>
-          <button class="choice" type="button" data-v="other">Something else</button>
+      <div id="stage">
+        <div class="q on intro" id="intro">
+          <div class="intro-badge">🎛️</div>
+          <p class="eyebrow">The Founder Bottleneck Test</p>
+          <h1>Are you running your business, or <span class="accent">is it running through you?</span></h1>
+          <p class="lede">Seven real-life scenarios from a fitness coaching business. Answer honestly. Watch the meter. Get your founder archetype, your score out of 100, and your biggest bottleneck.</p>
+          <div class="cta-row"><button class="btn block" type="button" id="start">Start the test</button></div>
+          <div class="intro-meta"><span>⏱ 90 seconds</span><span>🔓 Results on screen</span><span>🙅 No sales call required</span></div>
         </div>
-      </div>
-
-      <div class="q" data-key="revenue">
-        <h2>Roughly what do you collect in a month?</h2>
-        <p class="hint">Only used to point you to the right next step.</p>
-        <div class="choices">
-          <button class="choice" type="button" data-v="0">Under $10K</button>
-          <button class="choice" type="button" data-v="10000">$10K to $20K</button>
-          <button class="choice" type="button" data-v="20000">$20K to $30K</button>
-          <button class="choice" type="button" data-v="30000">$30K to $50K</button>
-          <button class="choice" type="button" data-v="50000">$50K to $100K</button>
-          <button class="choice" type="button" data-v="100000">$100K or more</button>
-        </div>
-      </div>
-
-      <div class="q" data-key="onboarding">
-        <h2>A new client pays you. What happens next?</h2>
-        <div class="choices">
-          <button class="choice" type="button" data-v="manual" data-s="2">Me or my team onboard them by hand, often in DMs or email</button>
-          <button class="choice" type="button" data-v="partial" data-s="1">Part automated, part manual</button>
-          <button class="choice" type="button" data-v="auto" data-s="0">It runs on its own: intake, coach assigned, Trainerize ready</button>
-        </div>
-      </div>
-
-      <div class="q" data-key="tools">
-        <h2>How many tools does a new client touch from payment to first session?</h2>
-        <div class="choices">
-          <button class="choice" type="button" data-v="1-3" data-s="0">1 to 3, all connected</button>
-          <button class="choice" type="button" data-v="4-6" data-s="1">4 to 6</button>
-          <button class="choice" type="button" data-v="7+" data-s="2">7 or more</button>
-          <button class="choice" type="button" data-v="unsure" data-s="2">Honestly, I've lost count</button>
-        </div>
-      </div>
-
-      <div class="q" data-key="time_off">
-        <h2>If you took two weeks off, would your onboarding still work?</h2>
-        <div class="choices">
-          <button class="choice" type="button" data-v="runs" data-s="0">Yes, it would run fine</button>
-          <button class="choice" type="button" data-v="slips" data-s="1">Mostly, but things would slip</button>
-          <button class="choice" type="button" data-v="stops" data-s="2">No, it would stall without me</button>
-        </div>
-      </div>
-
-      <div class="q" data-key="goal">
-        <h2>What matters most in the next 90 days?</h2>
-        <div class="choices">
-          <button class="choice" type="button" data-v="more_clients">More clients</button>
-          <button class="choice" type="button" data-v="retention">Keeping the clients I have longer</button>
-          <button class="choice" type="button" data-v="time">Getting my hours back</button>
-          <button class="choice" type="button" data-v="team">A team that runs without me</button>
-        </div>
-      </div>
-
-      <div class="q" data-key="contact">
-        <h2>Where should we send your result?</h2>
-        <p class="hint">Your result shows on the next screen. We'll email you a copy.</p>
-        <form class="form" id="contactForm" novalidate style="margin-top:22px">
-          <div class="field">
-            <label for="fn">First name</label>
-            <input id="fn" name="first_name" type="text" autocomplete="given-name" required>
-          </div>
-          <div class="field">
-            <label for="em">Email</label>
-            <input id="em" name="email" type="email" autocomplete="email" inputmode="email" required>
-          </div>
-          <div class="err" id="cErr" role="alert"></div>
-          <button class="btn block" type="submit">See my result</button>
-          <p class="consent">By continuing you agree to receive emails from Keep It Simple about KIS OS. Unsubscribe anytime. <a href="https://kisos.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></p>
-        </form>
       </div>
 
       <button class="back" type="button" id="back" hidden>Back</button>
     </div>
   </section>
+
+  <!-- Building-your-result moment -->
+  <section class="crunch" id="crunch" hidden>
+    <div class="wrap center">
+      <div class="crunch-ring" aria-hidden="true"></div>
+      <h2 id="crunchLine">Tracing your handoffs...</h2>
+    </div>
+  </section>
 </main>
+
+<div class="quip" id="quip" role="status" aria-live="polite"></div>
 
 <footer class="foot">
   <div class="wrap">
     <div>&copy; 2026 KIS. All rights reserved. <a href="https://kisos.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a> · <a href="https://kisos.com/terms" target="_blank" rel="noopener">Terms</a></div>
-    <div class="spec">Draft for review. Items in gold brackets are placeholders waiting on real assets.</div>
+    <div class="spec">Your score is based only on your own answers.</div>
   </div>
 </footer>
 
 <script>
 (function () {
-  var steps = Array.prototype.slice.call(document.querySelectorAll(".q"));
-  var i = 0, answers = {}, scores = {};
-  var total = steps.length - 1; // intro is not a question
-  var bar = document.getElementById("bar"), back = document.getElementById("back"), qcount = document.getElementById("qcount");
+  var Q = KISQ.QUESTIONS, stage = document.getElementById("stage");
+  var answers = {}, scores = {}, i = -1, locked = false;
+  var meter = document.getElementById("meter"), fill = document.getElementById("meterFill"), needle = document.getElementById("meterNeedle");
+  var qcount = document.getElementById("qcount"), back = document.getElementById("back"), quip = document.getElementById("quip");
+  var scored = Q.filter(function (q) { return q.area; }).length;
 
-  function go(n) {
-    steps[i].classList.remove("on");
-    i = n;
-    steps[i].classList.add("on");
-    bar.style.width = (i / total * 100) + "%";
-    back.hidden = i === 0;
-    qcount.textContent = i === 0 ? "60-second quiz" : (i < total ? "Question " + i + " of " + (total - 1) : "Last step");
+  function esc(s) { var d = document.createElement("div"); d.textContent = s; return d.innerHTML; }
+
+  function updateMeter() {
+    var keys = Object.keys(scores), sum = 0;
+    keys.forEach(function (k) { sum += scores[k]; });
+    var pct = keys.length ? Math.round(sum / (keys.length * 3) * 100) : 0;
+    fill.style.width = pct + "%";
+    needle.style.left = pct + "%";
+    document.getElementById("meterLabel").textContent = !keys.length ? "Founder dependence" :
+      pct <= 25 ? "Running on systems" : pct <= 50 ? "On your radar" : pct <= 75 ? "Held with duct tape" : "Full switchboard";
+  }
+
+  function render(n) {
+    var q = Q[n];
+    var h = '<div class="q on"><div class="q-emoji">' + q.emoji + '</div><h2>' + esc(q.q) + '</h2>' + (q.hint ? '<p class="hint">' + esc(q.hint) + '</p>' : "");
+    if (q.type === "slider") {
+      var v = answers[q.area] || 5;
+      h += '<div class="slider"><div class="slider-num"><strong id="sNum">' + v + (v >= q.max ? "+" : "") + '</strong><span id="sLabel">' + q.label(v) + '</span></div>' +
+        '<div class="apps" id="apps"></div>' +
+        '<input type="range" id="sRange" min="' + q.min + '" max="' + q.max + '" value="' + v + '" aria-label="Number of apps">' +
+        '<div class="slider-ends"><span>1</span><span>12+</span></div></div>' +
+        '<div class="cta-row"><button class="btn block" type="button" id="sNext">Lock it in</button></div>';
+    } else {
+      h += '<div class="choices">' + q.options.map(function (o, k) {
+        var sel = (q.area ? answers[q.area] : answers[q.key]) === (q.area ? k : o.v) ? " sel" : "";
+        return '<button class="choice' + sel + '" type="button" data-k="' + k + '">' + esc(o.t) + '</button>';
+      }).join("") + '</div>';
+    }
+    stage.innerHTML = h + '</div>';
+    qcount.textContent = q.area ? "Scenario " + (n + 1) + " of " + scored : "Last question";
+    back.hidden = false;
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }
 
-  document.getElementById("start").addEventListener("click", function () { KIS.track("QuizStart"); go(1); });
-  back.addEventListener("click", function () { if (i > 0) go(i - 1); });
-
-  steps.forEach(function (step, n) {
-    var key = step.getAttribute("data-key");
-    step.querySelectorAll(".choice").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        step.querySelectorAll(".choice").forEach(function (b) { b.classList.remove("sel"); });
-        btn.classList.add("sel");
-        answers[key] = btn.getAttribute("data-v");
-        if (btn.hasAttribute("data-s")) scores[key] = Number(btn.getAttribute("data-s"));
-        setTimeout(function () { go(n + 1); }, 180);
+    if (q.type === "slider") {
+      var r = document.getElementById("sRange"), apps = document.getElementById("apps");
+      var draw = function () {
+        var val = Number(r.value);
+        document.getElementById("sNum").textContent = val + (val >= q.max ? "+" : "");
+        document.getElementById("sLabel").textContent = q.label(val);
+        apps.innerHTML = new Array(val + 1).join('<i></i>');
+        r.style.setProperty("--p", ((val - q.min) / (q.max - q.min) * 100) + "%");
+      };
+      r.addEventListener("input", draw); draw();
+      document.getElementById("sNext").addEventListener("click", function () {
+        var val = Number(r.value);
+        answer(n, q.score(val), q.react(val), val);
       });
-    });
-  });
-
-  function resultType() {
-    if (Number(answers.revenue) < KIS.ICP_FLOOR) return "foundation";
-    var s = (scores.onboarding || 0) + (scores.tools || 0) + (scores.time_off || 0);
-    if (s >= 4) return "switchboard";
-    if (s >= 2) return "duct-tape";
-    return "next-stage";
+    } else {
+      stage.querySelectorAll(".choice").forEach(function (b) {
+        b.addEventListener("click", function () {
+          if (locked) return;
+          stage.querySelectorAll(".choice").forEach(function (x) { x.classList.remove("sel"); });
+          b.classList.add("sel");
+          var o = q.options[Number(b.getAttribute("data-k"))];
+          answer(n, o.s, o.r, q.area ? Number(b.getAttribute("data-k")) : o.v);
+        });
+      });
+    }
   }
 
-  document.getElementById("contactForm").addEventListener("submit", function (e) {
-    e.preventDefault();
-    var fn = this.first_name.value.trim(), em = this.email.value.trim(), err = document.getElementById("cErr");
-    if (!fn) { err.textContent = "Please add your first name."; return; }
-    if (!KIS.validEmail(em)) { err.textContent = "Please add a valid email."; return; }
-    err.textContent = "";
-    var type = resultType();
+  function answer(n, s, reaction, raw) {
+    var q = Q[n];
+    locked = true;
+    if (q.area) { scores[q.area] = s; answers[q.area] = raw; } else { answers[q.key] = raw; }
+    updateMeter();
+    quip.textContent = reaction;
+    quip.className = "quip show" + (q.area ? " s" + s : "");
+    setTimeout(function () {
+      quip.className = "quip";
+      locked = false;
+      if (n + 1 < Q.length) { i = n + 1; render(i); } else { finish(); }
+    }, 1500);
+  }
+
+  function finish() {
+    var sum = 0;
+    KISQ.ORDER.forEach(function (k) { sum += scores[k] || 0; });
+    var score = Math.round(sum / (scored * 3) * 100);
+    var a = KISQ.archetype(score);
+    var code = KISQ.ORDER.map(function (k) { return scores[k] || 0; }).join("");
+    KIS.set({ quiz: { score: score, archetype: a.id, areas: code, revenue: answers.revenue } });
     var lead = KIS.get("lead") || {};
-    lead.first_name = fn; lead.email = em;
-    for (var k in answers) lead[k] = answers[k];
-    KIS.set({ lead: lead, quiz_result: type });
-    // GHL: post answers + result tag (kis-quiz-<type>) here; that starts email Sequence C.
-    KIS.track("QuizComplete", { result: type });
-    KIS.go("result/?type=" + type);
+    lead.revenue = answers.revenue;
+    KIS.set({ lead: lead });
+    // GHL: post score, archetype and answers here; tag kis-quiz-<archetype>.
+    KIS.track("QuizComplete", { score: score, archetype: a.id });
+
+    document.querySelector(".hero").hidden = true;
+    meter.hidden = true;
+    var crunch = document.getElementById("crunch"), line = document.getElementById("crunchLine");
+    crunch.hidden = false;
+    var lines = ["Tracing your handoffs...", "Counting the duct tape...", "Finding your bottleneck..."], j = 0;
+    var t = setInterval(function () { j++; if (j < lines.length) line.textContent = lines[j]; }, 800);
+    setTimeout(function () { clearInterval(t); KIS.go("result/?s=" + score + "&a=" + code + "&me=1"); }, 2500);
+  }
+
+  document.getElementById("start").addEventListener("click", function () {
+    KIS.track("QuizStart");
+    meter.hidden = false;
+    updateMeter();
+    i = 0; render(0);
+  });
+  back.addEventListener("click", function () {
+    if (locked) return;
+    if (i <= 0) { location.reload(); return; }
+    i -= 1; render(i);
   });
 })();
 </script>
